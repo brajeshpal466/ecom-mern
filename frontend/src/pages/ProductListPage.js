@@ -12,6 +12,7 @@ import Alert from '@mui/material/Alert';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import ProductCard from '../components/ProductCard';
+import { useDebounce } from '../hooks/useDebounce';
 
 const ProductListPage = () => {
   const { data: products = [], isLoading, isError } = useGetProductsQuery();
@@ -20,14 +21,19 @@ const ProductListPage = () => {
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const debouncedSearch = useDebounce(search, 500);
 
   const categories = Array.from(
     new Set((products || []).map((p) => p.category).filter(Boolean))
   ).sort((a, b) => a.localeCompare(b));
 
-  const filtered = products
-    .filter((p) => (category === 'all' ? true : p.category === category))
-    .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
+
+
+    const filtered = products
+      .filter((p) => (category === 'all' ? true : p.category === category))
+      .filter((p) =>
+        p.name.toLowerCase().includes(debouncedSearch.toLowerCase())
+      );
 
   const handleAddToCart = (product) => {
     const image = product?.image || product?.images?.[0];
