@@ -140,6 +140,13 @@ npm start
 
 ---
 
+
+### 📄 Cart Page
+
+<img src="./screenshots/card.png" width="800"/>
+
+---
+
 ### 📦 Orders Page
 
 <img src="./screenshots/order.png" width="800"/>
