@@ -95,9 +95,19 @@ const ProductListPage = () => {
       )}
       {isError && <Alert severity="error">Failed to load products.</Alert>}
 
-      <Grid container spacing={2}>
+      <Grid container spacing={2}
+      justifyContent="center"
+      >
         {filtered.map((product) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={product._id}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={product._id}
+          sx={{
+            display: "flex",
+            justifyContent: "center" // ✅ centers card
+          }}
+    
+          
+          
+          >
             <ProductCard product={product} onAddToCart={handleAddToCart} />
           </Grid>
         ))}
