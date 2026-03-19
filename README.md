@@ -146,11 +146,6 @@ npm start
 
 ---
 
-## 🎥 Demo Video
-
-*Add Loom video link here*
-
----
 
 ## 📂 Project Structure
 
