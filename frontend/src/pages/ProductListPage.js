@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useGetProductsQuery } from '../features/products/productsApi';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cart/cartSlice';
@@ -35,7 +35,7 @@ const ProductListPage = () => {
         p.name.toLowerCase().includes(debouncedSearch.toLowerCase())
       );
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = useCallback( (product) => {
     const image = product?.image || product?.images?.[0];
     dispatch(
       addToCart({
@@ -46,7 +46,7 @@ const ProductListPage = () => {
         qty: 1,
       })
     );
-  };
+  }, [dispatch]);
 
   return (
     <Box>

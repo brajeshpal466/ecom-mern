@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
-export default function OrderCard({ order }) {
+ function OrderCard({ order }) {
   return (
     <Paper sx={{ p: 2 }}>
       <Stack
@@ -30,4 +30,6 @@ export default function OrderCard({ order }) {
     </Paper>
   );
 }
+
+export default React.memo(OrderCard);
 

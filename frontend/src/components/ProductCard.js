@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-export default function ProductCard({ product, onAddToCart }) {
+function ProductCard({ product, onAddToCart }) {
   const image = product?.image || product?.images?.[0];
   const navigate = useNavigate();
 
@@ -81,3 +81,4 @@ export default function ProductCard({ product, onAddToCart }) {
     </Card>
   );
 }
+export default React.memo(ProductCard);
