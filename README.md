@@ -128,7 +128,21 @@ npm start
 
 ## 📸 Screenshots
 
-*Add screenshots here*
+### 🏠 Product Listing Page
+
+<img src="./screenshots/productlist.png" width="800"/>
+
+---
+
+### 📄 Product Details Page
+
+<img src="./screenshots/productdetails.png" width="800"/>
+
+---
+
+### 📦 Orders Page
+
+<img src="./screenshots/order.png" width="800"/>
 
 ---
 
@@ -146,6 +160,9 @@ ecom-app
 ├── frontend
 ├── backend
 ├── docker-compose.yml
+├── screenshots
 └── README.md
 ```
 
+
+---
